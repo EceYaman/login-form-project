@@ -91,8 +91,9 @@ const handleSubmit = (event) => {
                 onChange={handleChange}
                 value={form.email}
                 invalid={errors.email}
+                data-cy="email-input"
                 />
-                {errors.email && <FormFeedback>{errorMessages.email}</FormFeedback>}
+                {errors.email && <FormFeedback data-cy="error-message">{errorMessages.email}</FormFeedback>}
             </FormGroup>
             <FormGroup>
                 <Label for="password">Password</Label>
@@ -104,9 +105,10 @@ const handleSubmit = (event) => {
                 onChange={handleChange}
                 value={form.password}
                 invalid={errors.password}
+                data-cy="password-input"
                 />
                 {errors.password && (
-          <FormFeedback>{errorMessages.password}</FormFeedback>
+          <FormFeedback data-cy="error-message">{errorMessages.password}</FormFeedback>
         )}
             </FormGroup>
             <FormGroup check>
@@ -123,7 +125,7 @@ const handleSubmit = (event) => {
                 </Label>
             </FormGroup>
             <FormGroup className="text-center p-4">
-                <Button color="primary" disabled={!isValid}>Kayıt ol</Button>
+                <Button color="primary" disabled={!isValid} data-cy="submit-button">Kayıt ol</Button>
             </FormGroup>
             </Form>
         </CardBody>
