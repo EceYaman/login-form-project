@@ -1,13 +1,15 @@
 
 import "./App.css"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
 import Login from "./components/Login";
-
-function App() {
+import Success from "./components/Success";
+export default function App() {
   return (
-    <>
-      <Login/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/success" element={<Success />} />
+      </Routes>
+    </Router>
   );
-};
-
-export default App;
+}
